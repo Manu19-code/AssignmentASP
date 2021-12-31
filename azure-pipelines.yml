@@ -18,13 +18,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: UniversalPackages@0
-  displayName: Universal Publish
-  inputs:
-    command: publish
-    publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    vstsFeedPublish: '<Assignment>/<Package>'
-    vstsFeedPackagePublish: '<SamplePackage>'
-    packagePublishDescription: '<AssignmentPackage>'
+- publish: $(System.DefaultWorkingDirectory)/bin/WebApp
+  artifact: WebApp
 
 
